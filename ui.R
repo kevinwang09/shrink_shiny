@@ -30,7 +30,8 @@ shinyUI(fluidPage(
             tabsetPanel(type = "tabs",
                         tabPanel("Least squares", plotOutput("ls_plot")),
                         tabPanel("Lasso", plotOutput("lasso_plot")),
-                        tabPanel("Ridge", plotOutput("ridge_plot"))
+                        tabPanel("Ridge", plotOutput("ridge_plot")),
+                        tabPanel("Weighted Lasso", plotOutput("weight_lasso_plot"))
             ) ## End tablsetPanel
         ) ## End mainPanel
     )

@@ -91,5 +91,28 @@ server <- (function(input, output) {
             geom_dl(method = "angled.boxes") +
             theme(legend.position = "none")
     })
+    
+    output$weight_lasso_plot <- renderPlot({
+        w_lasso = glmnet::cv.glmnet(
+            x = gen_data()$x,
+            y = gen_data()$y,
+            penalty.factor = c(0, 0, rep(1, ncol(gen_data()$x) - 2))
+        )
+        
+        w_lasso %>% 
+            coef2Df %>% 
+            dplyr::mutate(colour = variables %in% c("X01", "X02")) %>% 
+            ggplot(aes(x = log(lambda), 
+                       y = coef,
+                       colour = colour,
+                       group = variables,
+                       label = variables)) +
+            geom_line() +
+            scale_y_continuous(breaks = c(-0.2, 0, 0.2, 0.4, 0.6, 0.8, 1)) +
+            scale_color_manual(values = c("black", "red")) +
+            geom_vline(xintercept = log(w_lasso$lambda.min), colour = "blue") +
+            geom_dl(method = "angled.boxes") +
+            theme(legend.position = "none")
+    })
 
 }) ## End ShinyServer
