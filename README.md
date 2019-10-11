@@ -5,6 +5,8 @@ It is known in the statistics literature that the least squares linear regressio
 This Shiny app will simulate a data with correlated features. The first two columns of the design matrix are generated with coefficient 1 and the rest are 0. By looking at various plots, we can better understand the bahaviour of each of these three estimators. 
 
 
+This [free Shiny app](https://gauss17gon.shinyapps.io/shrink_shiny/) could work, but if it doesn't, you could run the code locally below. 
+
 ```
 library(shiny)
 library(glmnet)
