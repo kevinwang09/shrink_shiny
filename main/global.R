@@ -2,6 +2,7 @@ library(shiny)
 library(glmnet)
 library(tidyverse)
 library(directlabels)
+library(mvtnorm)
 
 theme_set(theme_bw(18) +
             theme(legend.position = "none"))
