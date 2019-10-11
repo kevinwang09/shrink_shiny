@@ -12,6 +12,7 @@ library(shiny)
 library(glmnet)
 library(tidyverse)
 library(directlabels)
+library(mvtnorm)
 
 shiny::runGitHub(
 repo = "shrink_shiny", 

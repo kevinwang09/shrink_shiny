@@ -1,0 +1,1 @@
+install.packages(c("shiny", "glmnet", "tidyverse", "directlabels", "mvtnorm"))
