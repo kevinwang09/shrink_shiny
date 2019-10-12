@@ -4,8 +4,14 @@ It is known in the statistics literature that the least squares linear regressio
 
 This Shiny app will simulate a data with correlated features. The first two columns of the design matrix are generated with coefficient 1 and the rest are 0. By looking at various plots, we can better understand the bahaviour of each of these three estimators. 
 
+# Running the app 
 
-This [free Shiny app](https://mybinder.org/v2/gh/kevinwang09/shrink_shiny/bindr?urlpath=shiny/main/) could work, but if it doesn't, you could run the code locally below. 
+We can try either:
++ This is a [free Shiny app](https://gauss17gon.shinyapps.io/shrink_shiny/) on `shinyapps.io`. It has an usage limit. 
+
++ This [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/kevinwang09/shrink_shiny/master?urlpath=shiny/main/) app works by deploying this Shiny app through Google Cloud. It also has an usage limit.
+
++ Locally running the code below:
 
 ```
 library(shiny)
@@ -15,8 +21,8 @@ library(directlabels)
 library(mvtnorm)
 
 shiny::runGitHub(
-repo = "shrink_shiny", 
-username = "kevinwang09", 
-ref = "bindr",
-subdir = "main")
+    repo = "shrink_shiny", 
+    username = "kevinwang09", 
+    ref = "bindr",
+    subdir = "main")
 ```
